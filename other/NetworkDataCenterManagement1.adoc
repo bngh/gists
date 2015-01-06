@@ -149,3 +149,16 @@ RETURN a.name, number
 
 '''
 
+=== Query 
+
+Bands from the UK
+
+[source,cypher]
+----
+MATCH (band:Band)
+WHERE band.country = 'UK'
+RETURN band.name,band.country
+----
+//graph
+
+'''
