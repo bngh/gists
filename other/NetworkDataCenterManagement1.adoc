@@ -8,7 +8,7 @@ with similar musical tastes.
 
 *Table of Contents*
 
-* *Data Model*
+* *Database Setup*
 * *Queries*
 ** *Basic*
 ** *Intermediate*
