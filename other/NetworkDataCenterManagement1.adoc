@@ -133,7 +133,7 @@ RETURN *
 
 === Query 
 
-Bands with more genres
+The band related to most genres.
 
 [source,cypher]
 ----
