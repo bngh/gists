@@ -200,7 +200,7 @@ MATCH (a:Musician)-[ra]->(xa:Band)
 WITH a, count(ra) as number,xa,maxnumber
 ORDER BY xa.band
 WHERE maxnumber = number
-RETURN a.name,collect(number),xa.name
+RETURN a.name,number,xa.name
 ----
 //table
 
