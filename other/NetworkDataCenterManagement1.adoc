@@ -196,9 +196,9 @@ MATCH (mario:User { name: "Mario" }),(electronic:Genre { name: "Electronic" }),
 p = shortestpath((mario)-[*]-(electronic))
 return p
 ----
-//graph
+//table
 
-'''
+'''''
 
 ===== Query 
 
