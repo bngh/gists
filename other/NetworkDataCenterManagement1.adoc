@@ -120,6 +120,18 @@ CREATE (m4b21)-[rt8:Listen]->(b2)
 CREATE (m4b21)-[rt9:Listen]->(b3)
 CREATE (m4b21)-[rt10:Listen]->(b4)
 
+
+CREATE (m4b22)-[rt12:Listen]->(b2)
+CREATE (m4b22)-[rt13:Listen]->(b3)
+
+CREATE (m4b24)-[rt14:Listen]->(b4)
+CREATE (m4b24)-[rt15:Listen]->(b5)
+
+CREATE (m4b25)-[rt16:Listen]->(b1)
+CREATE (m4b25)-[rt17:Listen]->(b3)
+
+CREATE (m4b23)-[rt18:Listen]->(b3)
+
 RETURN *
 
 ----
