@@ -162,3 +162,33 @@ RETURN band.name,band.country
 //table
 
 '''
+
+=== Query 
+
+Devuelve todos los usuarios que son amigos de Mario que escuchan algún grupo de los que escucha él.
+
+[source,cypher]
+----
+MATCH  (n:Band)-[:Listen]-(u:User)-[:FriendOf]-(mario:User { name: "Mario" })-[:Listen]-(n:Band)
+return u
+----
+//table
+
+'''
+
+
+=== Query 
+
+Devuelve la edad media de formación de las bandas en las que participó Dio (lml)
+
+[source,cypher]
+----
+MATCH (m:Band)<-[:Plays]-(:Musician {name: 'Ronnie James Dio'})
+WITH collect( m ) as t
+RETURN reduce(totalAge = 0, n IN t| totalAge + n.formed)/length( t ) AS reduction
+----
+//table
+
+'''
+
+
