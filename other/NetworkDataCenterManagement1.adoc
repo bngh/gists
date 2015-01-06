@@ -14,7 +14,7 @@ with similar musical tastes.
 ** *Intermediate*
 ** *Advanced*
 
-=== TeamWork RI
+= TeamWork RI
 
 === Database Setup
 
