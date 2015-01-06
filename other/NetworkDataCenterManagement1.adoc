@@ -131,18 +131,20 @@ RETURN *
 
 '''
 
-=== Query Elemental
+=== Query 
 
-The query below generates a data table that gives a quick overview of ACME's network infrastructure.
+Bands with more genres
 
 [source,cypher]
 ----
-MATCH (user:User)-[r]->(genre:Genre)
-WHERE genre.name = 'Hard Rock'
-WITH user
-RETURN user.name
+MATCH (b:Band)-[r]->(x:Genre)
+WITH b, count(r) as maxnumber
+ORDER BY maxnumber DESC LIMIT 1
+MATCH (a:Band)-[ra]->(xa:Genre)
+WITH a, count(ra) as number,maxnumber
+WHERE maxnumber = number
+RETURN a.name, number
 ----
-
 //table
 
 '''
