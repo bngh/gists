@@ -10,8 +10,6 @@ Description
 ** *Basic*
 ** *Intermediate*
 ** *Advanced*
-***
-***
 
 === TeamWork RI
 
@@ -138,7 +136,26 @@ RETURN *
 
 '''
 
-=== Query 
+=== Basic
+
+===== Query 
+
+Bands from the UK
+
+[source,cypher]
+----
+MATCH (band:Band)
+WHERE band.country = 'UK'
+RETURN band.name,band.country
+----
+//table
+
+'''
+
+=== Intermediate
+
+=== Advanced
+===== Query 
 
 The band related to most genres.
 
@@ -151,20 +168,6 @@ MATCH (a:Band)-[ra]->(xa:Genre)
 WITH a, count(ra) as number,maxnumber
 WHERE maxnumber = number
 RETURN a.name, number
-----
-//table
-
-'''
-
-=== Query 
-
-Bands from the UK
-
-[source,cypher]
-----
-MATCH (band:Band)
-WHERE band.country = 'UK'
-RETURN band.name,band.country
 ----
 //table
 
