@@ -157,7 +157,7 @@ RETURN band.name,band.country
 === Advanced
 ===== Query 
 
-The band related to most genres.
+Returns the name of the band related to most genres, and the number of genres that plays the band.
 
 [source,cypher]
 ----
@@ -173,9 +173,9 @@ RETURN a.name, number
 
 '''
 
-=== Query 
+===== Query 
 
-Devuelve todos los usuarios que son amigos de Mario que escuchan algún grupo de los que escucha él.
+Returns all the users that are friends of Mario and that listen to a band Mario listens to.
 
 [source,cypher]
 ----
@@ -185,11 +185,24 @@ return u
 //graph
 
 '''
+===== Query 
 
+Returns the path traversed in order to know the minimum number of persons ( friends of friends of...)
+that needs Mario to meet in order to know someone who listens to a band involved in the "Electronic" music.
 
-=== Query 
+[source,cypher]
+----
+MATCH (mario:User { name: "Mario" }),(electronic:Genre { name: "Electronic" }),
+p = shortestpath((mario)-[*]-(electronic))
+return p
+----
+//graph
 
-Devuelve la edad media de formación de las bandas en las que participó Dio
+'''
+
+===== Query 
+
+Returns the average age of the year of formation of all the bands Dio was involved.
 
 [source,cypher]
 ----
