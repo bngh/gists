@@ -174,7 +174,7 @@ Returns the name of the musicians that plays in Metallica and the year they were
 ----
 MATCH (musician:Musician)-->(band:Band)
 WHERE band.name = 'Metallica'
-RETURN musician.name, musician.born
+RETURN DISTINCT musician.name, musician.born
 ----
 //table
 
