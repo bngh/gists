@@ -140,7 +140,7 @@ RETURN *
 
 ===== Query 
 
-Bands from the UK
+Return the name of the bands that are from UK.
 
 [source,cypher]
 ----
@@ -154,7 +154,7 @@ RETURN band.name,band.country
 
 ===== Query 
 
-Returns the users that listen to Hard Rock.
+Returns the name of the users that listen to Hard Rock.
 
 [source,cypher]
 ----
@@ -162,6 +162,20 @@ MATCH (user:User)-[r]->(genre:Genre)
 WHERE genre.name = 'Hard Rock'
 WITH user
 RETURN user.name
+----
+//table
+
+'''
+
+===== Query 
+
+Returns the musicians of a band.
+
+[source,cypher]
+----
+MATCH (musician:Musician)-->(band:Band)
+WHERE band.name = 'Metallica'
+RETURN collect(DISTINCT musician)
 ----
 //table
 
@@ -190,6 +204,7 @@ RETURN a.name, number
 ===== Query 
 
 Returns the musician that plays more instruments inside the same band, from all the bands in the graph.
+It also returns the number of instruments he plays in that band, and the name of the band.
 
 [source,cypher]
 ----
