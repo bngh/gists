@@ -159,7 +159,7 @@ Returns the instruments that plays James Hetfield in Metallica.
 [source,cypher]
 ----
 MATCH (musician:Musician)-[r]->(band:Band)
-WHERE band.name = 'Metallica', musician.name = 'James Hetfield'
+WHERE band.name = 'Metallica' AND musician.name = 'James Hetfield'
 RETURN r.instrument
 ----
 //table
