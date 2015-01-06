@@ -152,9 +152,23 @@ RETURN band.name,band.country
 
 '''
 
+===== Query 
+
+Returns the users that listen to Hard Rock.
+
+[source,cypher]
+----
+MATCH (user:User)-[r]->(genre:Genre)
+WHERE genre.name = 'Hard Rock'
+WITH user
+RETURN user.name
+----
+//table
+
+'''
+
 === Intermediate
 
-=== Advanced
 ===== Query 
 
 Returns the name of the band related to most genres, and the number of genres that plays the band.
@@ -175,6 +189,27 @@ RETURN a.name, number
 
 ===== Query 
 
+Returns the musician that plays more instruments inside the same band, from all the bands in the graph.
+
+[source,cypher]
+----
+MATCH (m:Musician)-[r]->(b:Band)
+WITH m, count(r) as maxnumber
+ORDER BY maxnumber DESC LIMIT 1
+MATCH (a:Musician)-[ra]->(xa:Band)
+WITH a, count(ra) as number,xa,maxnumber
+ORDER BY xa.band
+WHERE maxnumber = number
+RETURN a.name,collect(number),xa.name
+----
+//table
+
+'''
+
+=== Advanced
+
+===== Query 
+
 Returns all the users that are friends of Mario and that listen to a band Mario listens to.
 
 [source,cypher]
@@ -182,12 +217,12 @@ Returns all the users that are friends of Mario and that listen to a band Mario 
 MATCH  (n:Band)-[:Listen]-(u:User)-[:FriendOf]-(mario:User { name: "Mario" })-[:Listen]-(n:Band)
 return u
 ----
-//graph
+//table
 
 '''
 ===== Query 
 
-Returns the path traversed in order to know the minimum number of persons ( friends of friends of...)
+Returns the path traversed in order to know the minimum number of people ( friends of friends of...)
 that needs Mario to meet in order to know someone who listens to a band involved in the "Electronic" music.
 
 [source,cypher]
@@ -198,7 +233,7 @@ return p
 ----
 //table
 
-'''''
+'''
 
 ===== Query 
 
