@@ -159,6 +159,6 @@ MATCH (band:Band)
 WHERE band.country = 'UK'
 RETURN band.name,band.country
 ----
-//graph
+//table
 
 '''
