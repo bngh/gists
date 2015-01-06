@@ -154,14 +154,13 @@ RETURN band.name,band.country
 
 ===== Query 
 
-Returns the name of the users that listen to Hard Rock.
+Returns the instruments that plays James Hetfield in Metallica.
 
 [source,cypher]
 ----
-MATCH (user:User)-[r]->(genre:Genre)
-WHERE genre.name = 'Hard Rock'
-WITH user
-RETURN user.name
+MATCH (musician:Musician)-[r]->(band:Band)
+WHERE band.name = 'Metallica', musician.name = 'James Hetfield'
+RETURN r.instrument
 ----
 //table
 
@@ -169,13 +168,13 @@ RETURN user.name
 
 ===== Query 
 
-Returns the musicians of a band.
+Returns the name of the musicians that plays in Metallica and the year they were born.
 
 [source,cypher]
 ----
 MATCH (musician:Musician)-->(band:Band)
 WHERE band.name = 'Metallica'
-RETURN collect(DISTINCT musician)
+RETURN musician.name, musician.born
 ----
 //table
 
