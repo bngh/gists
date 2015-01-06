@@ -2,6 +2,9 @@
 :author: bngh
 
 Description
+This is a subgraph of a hypothetical social network where users can search information about musicians and bands, but also
+help them to find friends that listen to some bands they listen, or to meet new people traversing the path friend-to-friend
+with similar musical tastes.
 
 *Table of Contents*
 
