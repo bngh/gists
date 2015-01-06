@@ -1,19 +1,14 @@
 = TeamWork
 :author: bngh
 
-Descripción
+Description
 
 *Table of Contents*
 
 * *Data Model*
-** 
 * *Consultas*
 ** *Elementales*
-***
-***
 ** *Intermedias*
-***
-*** 
 ** *Avanzadas*
 ***
 ***
