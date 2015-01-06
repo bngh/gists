@@ -179,7 +179,7 @@ return u
 
 === Query 
 
-Devuelve la edad media de formación de las bandas en las que participó Dio (lml)
+Devuelve la edad media de formación de las bandas en las que participó Dio
 
 [source,cypher]
 ----
